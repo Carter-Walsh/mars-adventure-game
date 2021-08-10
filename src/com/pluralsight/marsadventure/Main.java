@@ -3,7 +3,6 @@ package com.pluralsight.marsadventure;
 public class Main {
 
     public static void main(String[] args) {
-
     GameImpl gameImpl = new GameImpl();
 
     gameImpl.gameStart();
