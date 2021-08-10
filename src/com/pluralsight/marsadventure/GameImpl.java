@@ -9,14 +9,6 @@ public class GameImpl {
     private String userName;
     private String animalName;
 
-    public void gameStart() {
-        System.out.println("""
-                The game is about to start....
-                ...
-                ...
-                ...
-                Ready""");
-    }
 
     public void getUserName() {
         System.out.println("Hi there. What's your name?");
@@ -24,7 +16,7 @@ public class GameImpl {
         while (true) {
             userName = scanner.nextLine();
 
-            if (!userName.equals("")) {
+            if (!userName.trim().equals("")) {
                 System.out.println("Hi, " + userName + " --- Welcome to the mars adventure game. Yesterday, you received" +
                         "a call from your good friend at NASA. They need someone to go to Mars this weekend, and you've been chosen.");
                 break;
@@ -57,11 +49,11 @@ public class GameImpl {
     public void packing() {
         System.out.println("It's time to pack for your trip.\n" +
                 "How many suitcases do you plan to bring?");
-        int numberOfSuitcases = scanner.nextInt();
 
         while (true) {
-
             try {
+                int numberOfSuitcases = scanner.nextInt();
+
                 if (numberOfSuitcases > 2) {
                     System.out.println("That's way too many. You'll have to pack more lightly.\n" +
                             "Please try to fit your stuff into 2 suitcases. " +
@@ -73,15 +65,14 @@ public class GameImpl {
                     System.out.println("That's not a valid number. Please make sure the number of suitcases you enter is above 0.");
                 } else {
                     System.out.println("Great job packing!");
+                    scanner.nextLine();
                     break;
                 }
 
-                numberOfSuitcases = scanner.nextInt();
             } catch (InputMismatchException e) {
                 scanner.next();
                 System.out.println("Oops! Invalid input. Make sure you only input integers.");
             }
-
         }
     }
 
@@ -93,7 +84,7 @@ public class GameImpl {
         while (true) {
             animalKind = scanner.nextLine();
 
-            if (!animalKind.equals("")) {
+            if (!animalKind.trim().isEmpty()) {
                 break;
             } else {
                 System.out.println("Oops! Looks like you didn't input anything. Make sure to include what kind of animal you will be bringing.");
@@ -104,7 +95,7 @@ public class GameImpl {
         while (true) {
             animalName = scanner.nextLine();
 
-            if (!animalName.equals("")) {
+            if (!animalName.trim().isEmpty()) {
                 System.out.println("Cool, so you're bringing " + animalName + " the " + animalKind);
                 break;
             } else {
