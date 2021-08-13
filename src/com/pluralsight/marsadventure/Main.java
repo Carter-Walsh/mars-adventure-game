@@ -5,8 +5,8 @@ public class Main {
     public static void main(String[] args) {
     GameImpl gameImpl = new GameImpl();
 
-    gameImpl.getUserName();
-    gameImpl.isExcited();
+    gameImpl.userNamePrompt();
+    gameImpl.isExcitedPrompt();
     gameImpl.packing();
     gameImpl.animalInfo();
     gameImpl.interiorDesign();
